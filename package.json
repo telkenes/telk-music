@@ -1,6 +1,6 @@
 {
   "name": "telk-music",
-  "version": "1.2.2",
+  "version": "3.0.0",
   "description": "a Simple discord.js music module",
   "main": "index.js",
   "directories": {
@@ -11,12 +11,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/telkenes/telk-music/"
+    "url": "git+https://github.com/telkenes/telk-music.git"
   },
   "keywords": [
     "discord.js",
     "music"
   ],
   "author": "Telk",
-  "license": "ISC"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/telkenes/telk-music/issues"
+  },
+  "homepage": "https://github.com/telkenes/telk-music#readme",
+  "dependencies": {
+    "node-fetch": "*",
+    "ytdl-core": "*"
+  }
 }
