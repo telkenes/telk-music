@@ -48,6 +48,15 @@ client.on('messageUpdate', async (oldmsg, newmsg) => {
 	run(newmsg)
 })
 
+client.on('messageDelete', async (msg) => {
+	const queue = getQueue(msg.guild.id)
+	if (queue.npmsgid === msg.id) {
+		clearInterval(queue.editmsg)
+		queue.npmsgid = null
+		queue.npmsg = null
+	}
+})
+
 		async function run(msg) {
 		const message = msg.content.trim();
 		if (msg.author.bot) return;
@@ -210,7 +219,8 @@ async function np(msg) {
         var nowplayingembed = new Discord.RichEmbed()
         .setTitle('Now Playing:').setDescription(`**${queue[0].title}**\n${c.join('')} ${timeline} ${np.join('')}`)
         queue.npmsg = await msg.channel.send(nowplayingembed)
-       queue.editmsg =  setInterval(() => {
+	queue.npmsgid = queue.npmsg.id
+      	queue.editmsg =  setInterval(() => {
 		   if (!queue[0]) return clearInterval(queue.editmsg) 
 
            if (queue.runningtime >= queue.nplength) {
