@@ -9,18 +9,25 @@ __The commands available are:__
 * `skip [number]`: Skip some number of songs. Will skip 1 song if a number is not specified.
 * `queue`: Display the current queue.
 * `volume [number]`: Change the volume from 1-200(sometimes the quality is bad)
-* `leave`: Clears the song queue and leaves the channel.
 * `clearqueue`: Clears the song queue.
 * `stop`: Stops the bot from playing music
 * `loop [on/off]`: Loops the queue
 * `np`: shows the song that is currently playing
 * `nowplaying`: shows the song that is currently playing
-* `about`: eh. . . u think i don't put a command for credit?
 * `lyrics`: shows the current song lyrics
-
-__removed commands__
 * `pause`: Pause music playback.
 * `resume`: Resume music playback.
+
+__other commands__
+this option with only work when the other commands option is on
+* `ping`: sends the ping of the bot
+* `help`: sends the command list
+* `stats`: sends some stats of the bot
+* `about`: sends information about the bot
+
+__removed commands__
+* `leave`: Clears the song queue and leaves the channel.
+Reason: clearqueue is the same and leave clears the queue which idk(i dont think dis command is necessary)
 
 
 # How to use
