@@ -390,9 +390,9 @@ async function searchsong(msg, suffix) {
 			var res = await fetch(`https://some-random-api.ml/lyrics?title=${encodeURIComponent(suffix)}`)
 			var lyrics = await res.json()
 			if (lyrics.error) return message.edit(':frowning: Sorry I could not find that song')
-			if (lyrics.length >= 2000) {
-				var cut = lyrics.length - 2000
-				lyrics.lyrics = lyrics.lyrics.slice(0,-cut) + "..."
+			if (lyrics.lyrics.length >= 2048) {
+				var cut = lyrics.lyrics.length - 2000
+				lyrics.lyrics = lyrics.lyrics.slice(0,0 - cut) + "..."
 				}
 			var lyricembed = new Discord.RichEmbed()
 			.setTitle(lyrics.title + " lyrics")
@@ -403,8 +403,8 @@ async function searchsong(msg, suffix) {
 		var res = await fetch(`https://some-random-api.ml/lyrics?title=${encodeURIComponent(queue[0].title)}`)
 		var lyrics = await res.json()
 		if (lyrics.error) return message.edit(':frowning: Sorry I could not find that song')
-		if (lyrics.length >= 2000) {
-			var cut = lyrics.length - 2000
+		if (lyrics.lyrics.length >= 2048) {
+			var cut = lyrics.lyrics.length - 2000
 			lyrics.lyrics = lyrics.lyrics.slice(0,-cut) + "..."
 			}
 		var lyricembed = new Discord.RichEmbed()
