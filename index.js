@@ -40,7 +40,15 @@ var parseTime = function(milliseconds) {
 		+(milliseconds?milliseconds+" milliseconds":"");
   };
 
-	client.on('message', async msg => {
+client.on('message', async (msg) => {
+	run(msg)
+})
+
+client.on('messageUpdate', async (oldmsg, newmsg) => {
+	run(newmsg)
+})
+
+		async function run(msg) {
 		const message = msg.content.trim();
 		if (msg.author.bot) return;
 		if (message.toLowerCase().startsWith(prefix.toLowerCase())) {
@@ -160,7 +168,10 @@ message.channel.send(statsembed);
 				msg.delete();
 			}
 		}
-	});
+	}
+
+
+
 
 	//perm checking and getting queue
 	function isAdmin(member) {
