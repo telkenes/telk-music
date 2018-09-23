@@ -25,6 +25,7 @@
   "homepage": "https://github.com/telkenes/telk-music#readme",
   "dependencies": {
     "node-fetch": "*",
-    "ytdl-core": "*"
+    "ytdl-core": "*",
+    "xhr": "*"
   }
 }
