@@ -12,16 +12,16 @@ module.exports = function (client, options) {
 	api_key = (options && options.apikey) || "oooof why are u trying to think ill give u a key",
 	othercmds = (options && options.othercmds) || false,
 	//custom msgs
-	searchmessage = (options && options.messages.search) || ':mag_right: **Searching**  \`{song}\` . . .', 
-	addedmessage = (options && options.messages.added) || ':musical_note: Added **{song}** to the queue!',
-	playmessage = (options && options.messages.play) || ':notes: Now Playing **{song}**!',
-	loopmessage = (options && options.messages.loop) || ':white_check_mark: loop turned **{toggle}**!',
-	sorrymsg = (options && options.messages.channelerror) || ':x: Sorry but you cannot use `{command}` in dms',
-	no_more_songs_message = (options && options.messages.end_of_queue) || ':white_check_mark: We ran out of songs.',
+	searchmessage = (options.messages && options.messages.search) || ':mag_right: **Searching**  \`{song}\` . . .', 
+	addedmessage = (options.messages && options.messages.added) || ':musical_note: Added **{song}** to the queue!',
+	playmessage = (options.messages && options.messages.play) || ':notes: Now Playing **{song}**!',
+	loopmessage = (options.messages && options.messages.loop) || ':white_check_mark: loop turned **{toggle}**!',
+	sorrymsg = (options.messages && options.messages.channelerror) || ':x: Sorry but you cannot use `{command}` in dms',
+	no_more_songs_message = (options.messages && options.messages.end_of_queue) || ':white_check_mark: We ran out of songs.',
 	//emotes
-	x = (options && options.emotes.x) || ':x:'
-	check = (options && options.emotes.check) || ':white_check_mark:'
-	mag = (options && options.emotes.mag) || ':mag_right:'
+	x = (options.emotes && options.emotes.x) || ':x:'
+	check = (options.emotes && options.emotes.check) || ':white_check_mark:'
+	mag = (options.emotes && options.emotes.mag) || ':mag_right:'
 	if (!api_key || api_key.length < 10) return console.log("\"No U\" pls insert a valid API key")
 
 	let queues = {};
