@@ -57,24 +57,18 @@ client.login(token);
 ```
 
 __options__
-Name | type | example
-* `apikey`: string | 'google api key'
-* `prefix`: string | '-'
-* `maxQueueSize`: init | 100 (0 is unlimited)
-* `deletemsg`: true/false | false
-* `play_is_search`: true/false | true
-* `messages`: all strings 
-  - search | ':mag_right: **Searching**  \`{song}\` . . .'
-  - added | ':musical_note: Added **{song}** to the queue!'
-  - play | ':notes: Now Playing **{song}**!'
-  - loop | ':white_check_mark: loop turned **{toggle}**!'
-  - end_of_queue | ':white_check_mark: We ran out of songs.'
-  - channelerror | ':x: Sorry but you cannot use `{command}` in dms'
-* `emotes`: all strings
-  - x | ':x:'
-  - check | ':white_check_mark:'
-  - mag | ':mag_right:'
-* `othercmds`: true/false | true
+Name | Info | Type | Example
+--- | --- | --- | --- 
+apikey | google api key | string | 'google api key'
+prefix | the bots prefix(supporting per guild prefix soon™) |  string | '-'
+maxQueueSize | set the max queue size(0 is unlimited) | init | 100
+deletemsg | if the bot should delete messages or not | true/false | false
+play_is_search | should the play command allow you to have a song selection or auto select | true/false | true
+messages | set custom messages | object | {search: ':mag_right: **Searching**  \`{song}\` . . .', added: '':musical_note: Added **{song}** to the queue!', play: ':notes: Now Playing **{song}**!', loop: ':white_check_mark: loop turned **{toggle}**!', end_of_queue: ':white_check_mark: We ran out of songs.', channelerror: ':x: Sorry but you cannot use `{command}` in dms'}
+emotes | set the custom emotes | object | {x: ':x:', check: ':white_check_mark:', mag: ':mag_right:'}
+othercmds | if the bot should have other commands | true/false | true
+
+**Notes:** in the messages section you can edit the end_of_queue to 'off' to make it not send a message at the end of the queue. only the apikey option is the one that is important the rest is optional
 
 
 __Extra Information__
@@ -82,5 +76,4 @@ __Extra Information__
 * music commands are disabled in dms!
 * lyric command now works better
 * doesnt response to other bots
-* add me on discord Telk#7197
 * need help? join https://discord.gg/3FKGeFw
